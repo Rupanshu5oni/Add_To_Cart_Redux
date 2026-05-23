@@ -13,7 +13,7 @@ const Products = () => {
 
   /* PRODUCTS + CATEGORY */
 
-  const { items, category } = useSelector(
+  const { items, category,search } = useSelector(
     (state) => state.products
   );
 
@@ -31,13 +31,25 @@ const Products = () => {
 
   }, [category])
 
+  /* SEARCH FILTER */
+
+const filteredProducts = items.filter(
+
+  (product) =>
+
+    product.title
+      .toLowerCase()
+      .includes(search.toLowerCase())
+
+)
+
   return (
 
     <div className="products">
-
+       
       {
-
-        items.map((product) => (
+         
+        filteredProducts.map((product) => (
           <div
             className="amazon-card"
             key={product.id}

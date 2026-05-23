@@ -35,7 +35,9 @@ const initialState = {
 
   error: null,
 
-  category: "smartphones"
+  category: "smartphones",
+
+  search: ""
 
 };
 
@@ -49,9 +51,19 @@ const productsSlice = createSlice({
 
   reducers: {
 
+    /* CATEGORY */
+
     setCategory: (state, action) => {
 
       state.category = action.payload;
+
+    },
+
+    /* SEARCH */
+
+    setSearch: (state, action) => {
+
+      state.search = action.payload;
 
     }
 
@@ -77,8 +89,15 @@ const productsSlice = createSlice({
 
 });
 
+/* EXPORT ACTIONS */
+
 export const {
-  setCategory
+
+  setCategory,
+  setSearch
+
 } = productsSlice.actions;
+
+/* EXPORT REDUCER */
 
 export default productsSlice.reducer;

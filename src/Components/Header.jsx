@@ -8,7 +8,7 @@ import { Link, useLocation } from 'react-router-dom'
 
 import { useDispatch } from 'react-redux'
 
-import { setCategory } from '../../features/productSlice'
+import { setCategory,setSearch } from '../../features/productSlice'
 
 import {
 
@@ -65,9 +65,16 @@ const Header = () => {
             <FaSearch className="search-icon" />
 
             <input
-              type="text"
-              placeholder="Search for Products, Brands and More"
-            />
+                  type="text"
+
+                  placeholder="Search for Products, Brands and More"
+
+                  onChange={(e) => {
+
+                    dispatch(setSearch(e.target.value))
+
+                  }}
+           />
 
           </div>
 
