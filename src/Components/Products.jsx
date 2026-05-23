@@ -38,7 +38,6 @@ const Products = () => {
       {
 
         items.map((product) => (
-
           <div
             className="amazon-card"
             key={product.id}

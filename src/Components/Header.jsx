@@ -118,10 +118,6 @@ const Header = () => {
 
             <FaUserCircle className='login-icon'/>
 
-            <span>Login</span>
-
-            <FaChevronDown className="down" />
-
           </div>
 
           {/* CART */}

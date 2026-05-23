@@ -8,7 +8,8 @@ import {
 import {
   removeItem,
   increaseQty,
-  decreaseQty
+  decreaseQty,
+  clearCart
 } from '../../features/counterSlice'
 
 import '../css/cart.css'
@@ -116,7 +117,7 @@ const CartList = () => {
                 </div>
 
                 <button
-                  className="remove-btn"
+                  className="remove-btn1"
                   onClick={() => {
                     dispatch(removeItem(item))
                   }}
@@ -150,7 +151,10 @@ const CartList = () => {
 
           </h2>
 
-          <button className="buy-btn">
+          <button className="buy-btn"
+                  onClick={() => {
+                       dispatch(clearCart())
+                    }}>
 
             Proceed to Buy
 

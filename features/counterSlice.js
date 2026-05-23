@@ -95,7 +95,15 @@ export const counterSlice = createSlice({
                 JSON.stringify(state.items)
             );
 
-        }
+        },
+
+        clearCart: (state) => {
+
+          state.items = [];
+
+          localStorage.removeItem('cartItems');
+
+       }
 
     }
 
@@ -105,7 +113,8 @@ export const {
     addItem,
     removeItem,
     increaseQty,
-    decreaseQty
+    decreaseQty,
+    clearCart
 } = counterSlice.actions;
 
 export default counterSlice.reducer;
