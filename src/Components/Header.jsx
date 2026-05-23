@@ -4,7 +4,7 @@ import AddToCart from './AddToCart'
 
 import '../App.css'
 
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 import { useDispatch } from 'react-redux'
 
@@ -15,13 +15,14 @@ import {
   FaSearch,
   FaUserCircle,
   FaMapMarkerAlt,
-  FaChevronDown
 
 } from "react-icons/fa";
 
 const Header = () => {
 
   const dispatch = useDispatch()
+
+  const location = useLocation()
 
   return (
 
@@ -130,99 +131,107 @@ const Header = () => {
 
       {/* CATEGORY SECTION */}
 
-      <div className="categories">
+      {
 
-        {/* LAPTOP */}
+        location.pathname !== "/cart" && (
 
-        <div
-          className="category"
+          <div className="categories">
 
-          onClick={() => {
+            {/* LAPTOP */}
 
-            dispatch(setCategory("laptops"))
+            <div
+              className="category"
 
-          }}
-        >
+              onClick={() => {
 
-          <img src="https://img.icons8.com/?size=100&id=nK5KokYOqcnT&format=png&color=000000" />
+                dispatch(setCategory("laptops"))
 
-          <p>Laptop</p>
+              }}
+            >
 
-        </div>
+              <img src="https://img.icons8.com/?size=100&id=nK5KokYOqcnT&format=png&color=000000" />
 
-        {/* MOBILES */}
+              <p>Laptop</p>
 
-        <div
-          className="category"
+            </div>
 
-          onClick={() => {
+            {/* MOBILES */}
 
-            dispatch(setCategory("smartphones"))
+            <div
+              className="category"
 
-          }}
-        >
+              onClick={() => {
 
-          <img src="https://img.icons8.com/?size=100&id=5wGnhtHODuE9&format=png&color=000000" />
+                dispatch(setCategory("smartphones"))
 
-          <p>Mobiles</p>
+              }}
+            >
 
-        </div>
+              <img src="https://img.icons8.com/?size=100&id=5wGnhtHODuE9&format=png&color=000000" />
 
-        {/* ELECTRONICS */}
+              <p>Mobiles</p>
 
-        <div
-          className="category"
+            </div>
 
-          onClick={() => {
+            {/* ELECTRONICS */}
 
-            dispatch(setCategory("mobile-accessories"))
+            <div
+              className="category"
 
-          }}
-        >
+              onClick={() => {
 
-          <img src="https://cdn-icons-png.flaticon.com/128/3659/3659898.png" />
+                dispatch(setCategory("mobile-accessories"))
 
-          <p>Electronics</p>
+              }}
+            >
 
-        </div>
+              <img src="https://cdn-icons-png.flaticon.com/128/3659/3659898.png" />
 
-        {/* TABLETS */}
+              <p>Electronics</p>
 
-        <div
-          className="category"
+            </div>
 
-          onClick={() => {
+            {/* TABLETS */}
 
-            dispatch(setCategory("tablets"))
+            <div
+              className="category"
 
-          }}
-        >
+              onClick={() => {
 
-          <img src="https://img.icons8.com/?size=100&id=QDKWOFlWO3He&format=png&color=000000" />
+                dispatch(setCategory("tablets"))
 
-          <p>Tablet</p>
+              }}
+            >
 
-        </div>
+              <img src="https://img.icons8.com/?size=100&id=QDKWOFlWO3He&format=png&color=000000" />
 
-        {/* HEADPHONES */}
+              <p>Tablet</p>
 
-        <div
-          className="category"
+            </div>
 
-          onClick={() => {
+            {/* HEADPHONES */}
 
-            dispatch(setCategory("mobile-accessories"))
+            <div
+              className="category"
 
-          }}
-        >
+              onClick={() => {
 
-          <img src="https://img.icons8.com/?size=100&id=N06cr99JrdGK&format=png&color=000000" />
+                dispatch(setCategory("mobile-accessories"))
 
-          <p>Headphones</p>
+              }}
+            >
 
-        </div>
+              <img src="https://img.icons8.com/?size=100&id=N06cr99JrdGK&format=png&color=000000" />
 
-      </div>
+              <p>Headphones</p>
+
+            </div>
+
+          </div>
+
+        )
+
+      }
 
     </>
 
